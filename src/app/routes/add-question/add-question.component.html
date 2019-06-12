@@ -1,5 +1,5 @@
 <h1>Ajouter une question</h1>
-<form [formGroup]="f">
+<form [formGroup]="f" (ngSubmit)="submit()">
   <label>
     <div>
       Texte
@@ -23,8 +23,8 @@
     </div>
   </div>
   <div class="buttons">
-    <button routerLink="/setup">Annuler</button>
-    <button class="primary" routerLink="/setup">Ajouter</button>
+    <button routerLink="/setup" type="button">Annuler</button>
+    <button class="primary">Ajouter</button>
   </div>
 </form>
 
