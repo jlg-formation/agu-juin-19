@@ -1,3 +1,4 @@
 export class Quizz {
-    constructor(public name: string) {}
+    name: string;
+    constructor() {}
 }
