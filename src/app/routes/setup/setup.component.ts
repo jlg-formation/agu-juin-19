@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SetupComponent implements OnInit {
 
-  name = 'titi';
+  name = 'Les capitales européennes';
   nbr = 0;
 
   constructor() { }

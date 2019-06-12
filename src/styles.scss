@@ -15,6 +15,14 @@ button {
   border: 1px solid #eee;
   padding: 0.5em;
   cursor: pointer;
+  &:not([disabled]):hover {
+    background: #ddd;
+    border: 1px solid #ddd;
+  }
+  &:not([disabled]):active {
+    background: #ccc;
+    border: 1px solid #ccc;
+  }
 }
 
 [disabled] {
@@ -22,7 +30,6 @@ button {
 }
 
 input {
-    border: 1px solid #eee;
-    padding: 0.5em;
+  border: 1px solid #eee;
+  padding: 0.5em;
 }
-
