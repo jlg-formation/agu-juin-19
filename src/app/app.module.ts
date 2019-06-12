@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
@@ -25,6 +26,7 @@ import { SavedComponent } from './routes/saved/saved.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     AppRoutingModule,
     LayoutModule
