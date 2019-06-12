@@ -9,12 +9,17 @@ body {
 
 button {
   background: #eee;
-  border: none;
+  border: 1px solid #eee;
   padding: 0.5em;
   cursor: pointer;
 }
 
 [disabled] {
   cursor: inherit;
+}
+
+input {
+    border: 1px solid #eee;
+    padding: 0.5em;
 }
 
