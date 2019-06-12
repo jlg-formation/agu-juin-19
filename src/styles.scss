@@ -13,7 +13,7 @@ body {
 button {
   background: #eee;
   border: 1px solid #eee;
-  padding: 0.5em;
+  padding: 0.5em 1em;
   cursor: pointer;
   &:not([disabled]):hover {
     background: #ddd;
@@ -22,6 +22,11 @@ button {
   &:not([disabled]):active {
     background: #ccc;
     border: 1px solid #ccc;
+  }
+  &.primary {
+    background: #333;
+    border: 1px solid #333;
+    color: white;
   }
 }
 
