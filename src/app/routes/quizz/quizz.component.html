@@ -1,3 +1,5 @@
-<p>
-  quizz works!
-</p>
+<button 
+  *ngFor="let q of quizz.getListAsArray()"
+  [routerLink]="[q.name, 'question']">
+  {{q.name}}
+</button>

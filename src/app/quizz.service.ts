@@ -67,5 +67,9 @@ export class QuizzService {
     return Object.keys(this.list).length > 0;
   }
 
+  getListAsArray(): Quizz[] {
+    return Object.values(this.list);
+  }
+
 
 }
