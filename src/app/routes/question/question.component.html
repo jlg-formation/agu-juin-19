@@ -1,4 +1,4 @@
-<div class="page">{{1}}/{{quizz.current.questions.length}}</div>
+<div class="page">{{quizz.progress.questionId + 1}}/{{quizz.current.questions.length}}</div>
 <div class="frame">
   <span>{{quizz.current.questions[0].label}}</span>
   <form [formGroup]="f">
