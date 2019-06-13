@@ -6,6 +6,9 @@ import { CreateComponent } from './routes/create/create.component';
 import { SetupComponent } from './routes/setup/setup.component';
 import { AddQuestionComponent } from './routes/add-question/add-question.component';
 import { SavedComponent } from './routes/saved/saved.component';
+import { QuizzComponent } from './routes/quizz/quizz.component';
+import { QuestionComponent } from './routes/question/question.component';
+import { ScoreComponent } from './routes/score/score.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +17,9 @@ const routes: Routes = [
   { path: 'setup', component: SetupComponent },
   { path: 'add-question', component: AddQuestionComponent },
   { path: 'saved', component: SavedComponent },
+  { path: 'quizz', component: QuizzComponent },
+  { path: 'question', component: QuestionComponent },
+  { path: 'score', component: ScoreComponent },
 ];
 
 @NgModule({

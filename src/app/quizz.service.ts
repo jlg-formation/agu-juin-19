@@ -12,6 +12,11 @@ export class QuizzService {
   list = {};
 
   constructor() {
+    this.retrieveCurrent();
+    this.retrieveList();
+  }
+
+  retrieveCurrent() {
     const str = localStorage.getItem('current');
     if (!str) {
       return;
@@ -19,6 +24,19 @@ export class QuizzService {
     const q = new Quizz();
     Object.assign(q, JSON.parse(str));
     this.current = q;
+  }
+
+  retrieveList() {
+    const str = localStorage.getItem('list');
+    if (!str) {
+      return;
+    }
+    const list = JSON.parse(str);
+    // tslint:disable-next-line: forin
+    for (const name in list) {
+      list[name].__proto__ = Quizz.prototype;
+    }
+    this.list = list;
   }
 
   createCurrent(name: string) {
@@ -43,6 +61,10 @@ export class QuizzService {
     }
     this.list[this.current.name] = this.current;
     localStorage.setItem('list', JSON.stringify(this.list));
+  }
+
+  hasQuizz() {
+    return Object.keys(this.list).length > 0;
   }
 
 
