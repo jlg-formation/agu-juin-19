@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizzService } from 'src/app/quizz.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-question',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionComponent implements OnInit {
 
-  constructor() { }
+  f = new FormGroup({});
+  constructor(
+    public quizz: QuizzService
+  ) { }
 
   ngOnInit() {
   }
