@@ -13,4 +13,8 @@ export class SetupComponent implements OnInit {
   ngOnInit() {
   }
 
+  save() {
+    console.log('about to save the quizz');
+  }
+
 }
