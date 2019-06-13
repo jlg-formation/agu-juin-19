@@ -7,7 +7,7 @@ import { Quizz, Question } from './quizz';
   providedIn: 'root'
 })
 export class QuizzService {
-  
+
   current: Quizz;
 
   constructor() {
@@ -23,11 +23,16 @@ export class QuizzService {
   createCurrent(name: string) {
     this.current = new Quizz();
     this.current.name = name;
-    localStorage.setItem('current', JSON.stringify(this.current));
+    this.syncCurrent();
   }
 
   addQuestion(question: Question) {
     this.current.questions.push(question);
+    this.syncCurrent();
+  }
+
+  syncCurrent() {
+    localStorage.setItem('current', JSON.stringify(this.current));
   }
 
 

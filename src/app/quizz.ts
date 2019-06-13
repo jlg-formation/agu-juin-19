@@ -10,5 +10,4 @@ export interface Question {
 export class Quizz {
     name: string;
     questions: Question[] = [];
-    constructor() {}
 }
