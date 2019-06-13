@@ -9,6 +9,7 @@ import { Quizz, Question } from './quizz';
 export class QuizzService {
 
   current: Quizz;
+  list = {};
 
   constructor() {
     const str = localStorage.getItem('current');
@@ -33,6 +34,15 @@ export class QuizzService {
 
   syncCurrent() {
     localStorage.setItem('current', JSON.stringify(this.current));
+  }
+
+  saveCurrent() {
+    const str = localStorage.getItem('list');
+    if (str) {
+      this.list = JSON.parse(str);
+    }
+    this.list[this.current.name] = this.current;
+    localStorage.setItem('list', JSON.stringify(this.list));
   }
 
 
