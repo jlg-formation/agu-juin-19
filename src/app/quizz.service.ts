@@ -11,7 +11,7 @@ export interface QuizzProgress {
   providedIn: 'root'
 })
 export class QuizzService {
-  
+
   current: Quizz;
   list = {};
   progress: QuizzProgress;
@@ -19,6 +19,7 @@ export class QuizzService {
   constructor() {
     this.retrieveCurrent();
     this.retrieveList();
+    this.retrieveProgress();
   }
 
   retrieveCurrent() {
@@ -42,6 +43,14 @@ export class QuizzService {
       list[name].__proto__ = Quizz.prototype;
     }
     this.list = list;
+  }
+
+  retrieveProgress() {
+    const str = localStorage.getItem('progress');
+    if (!str) {
+      return;
+    }
+    this.progress = JSON.parse(str);
   }
 
   createCurrent(name: string) {
@@ -81,6 +90,11 @@ export class QuizzService {
       questionId: 0,
       score: 0
     };
+    this.syncProgress();
+  }
+
+  syncProgress() {
+    localStorage.setItem('progress', JSON.stringify(this.progress));
   }
 
 }
