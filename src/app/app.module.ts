@@ -16,6 +16,9 @@ import { SavedComponent } from './routes/saved/saved.component';
 import { QuizzComponent } from './routes/quizz/quizz.component';
 import { QuestionComponent } from './routes/question/question.component';
 import { ScoreComponent } from './routes/score/score.component';
+import { QuizzService } from './quizz.service';
+import { QuizzHttpService } from './quizz-http.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,11 +36,12 @@ import { ScoreComponent } from './routes/score/score.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FontAwesomeModule,
     AppRoutingModule,
     LayoutModule
   ],
-  providers: [],
+  providers: [{ provide: QuizzService, useClass: QuizzHttpService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
