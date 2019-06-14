@@ -18,9 +18,12 @@ describe('QuestionComponent', () => {
       declarations: [ QuestionComponent ],
       providers: [{
         provide: QuizzService, useValue: {
-          progress: {},
+          progress: {
+            questionId: 0
+          },
           current: {
-            questions: []
+            questions: [{
+            }]
           }
         }
       }],
