@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, logging, element, by } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -10,7 +10,16 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to quizz!');
+    expect(page.getTitleText()).toEqual('Quizz');
+  });
+
+  it('should click on the button doQuizz', () => {
+    page.navigateTo();
+    const button = element(by.css('button.doQuizz'));
+    button.click();
+    const input = element(by.css('input'));
+    const text = input.getAttribute('value');
+    expect(text).toEqual('titi');
   });
 
   afterEach(async () => {

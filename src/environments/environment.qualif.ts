@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: 'http://localhost:3000/ws/quizz',
+  serverUrl: 'http://localhost:5000/ws/quizz',
 };
